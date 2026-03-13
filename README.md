@@ -18,8 +18,9 @@ BytePedia is a web-based encyclopedia of programming languages, from classic one
 ## Contributing
 
 > Want to add a language, fix info, or submit a logo?  
-> Add a new JSON entry in /data/languages/  
-> Add your logo in /assets/logos/ (512×512 recommended)  
+> Add a new JSON entry in /langs/xyz/main.json (use existing files as templates)  
+> Add a new html page in /langs/xyz/index.html (use existing files as templates)
+> Add your logo in /langs/xyz/logo-n.svg (where n = logo number) (512×512 recommended)  
 > Submit a pull request  
 > Thats it!
 
