@@ -1,6 +1,12 @@
 (function() {
-    if (!window.langImage) window.langImage = "logo.svg";
+    if (!window.langName) window.langName = "BytePedia";
+    if (!window.langDescription) window.langDescription = "BytePedia - Programming languages encyclopedia";
+    if (!window.langImage) window.langImage = "logo.png";
     if (!window.langUrl) window.langUrl = window.location.href;
+
+    const title = document.createElement("title");
+    title.textContent = `${window.langName} | BytePedia`;
+    document.head.appendChild(title);
 
     const metaCharset = document.createElement("meta");
     metaCharset.setAttribute("charset", "UTF-8");
@@ -20,6 +26,11 @@
     linkFavicon.setAttribute("rel", "icon");
     linkFavicon.setAttribute("href", "/favicon.ico");
     document.head.appendChild(linkFavicon);
+
+    const metaDesc = document.createElement("meta");
+    metaDesc.setAttribute("name", "description");
+    metaDesc.setAttribute("content", window.langDescription);
+    document.head.appendChild(metaDesc);
 
     // Open Graph
     const ogTitle = document.createElement("meta");
