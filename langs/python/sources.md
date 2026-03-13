@@ -13,9 +13,9 @@
 > - Date Accessed: 13 March 2026
 
 ## Python Wikipedia Page
-> - Url: https://en.wikipedia.org/wiki/History_of_Python
+> - Url: https://en.wikipedia.org/wiki/Python_(programming_language)
 > - Date Accessed: 13 March 2026
 
 ## Python History Wikipedia Page
-> - Url: https://en.wikipedia.org/wiki/Python_(programming_language)
-> - date Accessed: 13 March 2026
+> - Url: https://en.wikipedia.org/wiki/History_of_Python
+> - Date Accessed: 13 March 2026
