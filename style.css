@@ -103,6 +103,17 @@ footer {
 
 .lang-content h1 { font-size: 2rem; margin: 0 0 0.5rem; }
 .lang-content h2 { font-size: 1.25rem; margin: 1.25rem 0 0.4rem; }
+.lang-content h3 { font-size: 1.12rem; margin: 1.1rem 0 0.35rem; }
+.lang-content h4 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+.lang-content h5 { font-size: 0.9rem; margin: 0.9rem 0 0.25rem; }
+.lang-content h6 { font-size: 0.82rem; margin: 0.8rem 0 0.2rem; }
+
+.lang-content img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0.5rem 0;
+}
 
 .lang-content pre {
 	background: #0d1224;

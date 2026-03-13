@@ -1,5 +1,8 @@
 # Python
 
+[logo](logo.svg)
+###### By ™/®Python Software Foundation - http://www.python.org/community/logos/, GPL, https://commons.wikimedia.org/w/index.php?curid=34991637
+
 **Type:** General-purpose, interpreted  
 **First appeared:** 1991  
 **Creator:** Guido van Rossum

@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python | BytePedia</title>
-    <link rel="stylesheet" href="/style.css">
+  <script>
+    let langName = "Python";
+    let langDescription = "Comprehensive information about the Python programming language, including history, features, and resources for learning.";
+    let langImage = "/lang/python/logo.svg";
+  </script>
+  <script src="/libs/head/main.js"></script>
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <h1><a href="/" style="color:inherit;text-decoration:none;">BytePedia</a></h1>
+  <header class="hero">
+    <div class="container">
+      <h1><a href="/" style="color:inherit;text-decoration:none;">BytePedia</a></h1>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/langs/">Languages</a></li>
+          <li><a href="/langs/python/">Python</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <nav class="header-nav" aria-label="Primary navigation">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/langs/">Languages</a></li>
-                    <li><a href="/langs/python/">Python</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <main class="container">
+    <a class="back-link" href="/">&larr; Back</a>
+    <div class="lang-content" id="content">Loading...</div>
+    <div class="lang-content" id="sources-list">Loading...</div>
+  </main>
 
-    <main class="container">
-        <a class="back-link" href="/">&larr; Back</a>
-        <div class="lang-content" id="content">Loading...</div>
-        <div class="lang-content" id="sources-list">Loading...</div>
-    </main>
+  <footer>
+    <p>&copy; 2026 BytePedia</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2026 BytePedia</p>
-    </footer>
-
-    <script src="/libs/md-html/main.js"></script>
-    <script>
-        BytePedia.loadMarkdown('main.md', 'content');
-        BytePedia.loadMarkdown('sources.md', 'sources-list');
-    </script>
+  <script src="/libs/md-html/main.js"></script>
+  <script>
+    BytePedia.loadMarkdown('main.md', 'content');
+    BytePedia.loadMarkdown('sources.md', 'sources-list');
+  </script>
 </body>
 </html>
