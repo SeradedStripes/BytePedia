@@ -24,25 +24,17 @@
     <main class="container">
         <a class="back-link" href="/">&larr; Back</a>
         <div class="lang-content" id="content">Loading...</div>
-        
-        <h2>Sources</h2>
-        <ul id="sources-list"></ul>
+        <div class="lang-content" id="sources-list">Loading...</div>
     </main>
 
     <footer>
         <p>&copy; 2026 BytePedia</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/libs/md-html/main.js"></script>
     <script>
-        fetch('main.md')
-            .then(r => r.text())
-            .then(md => {
-                document.getElementById('content').innerHTML = marked.parse(md);
-            })
-            .catch(() => {
-                document.getElementById('content').textContent = 'Failed to load content.';
-            });
+        BytePedia.loadMarkdown('main.md', 'content');
+        BytePedia.loadMarkdown('sources.md', 'sources-list');
     </script>
 </body>
 </html>

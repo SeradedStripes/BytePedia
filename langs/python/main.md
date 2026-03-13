@@ -12,21 +12,21 @@ for web development, data science, automation, and scripting.
 
 ## Key Features
 
-- Interpreted, runs line by line without a compile step
-- Huge ecosystem (PyPI hosts 500k+ packages)
-- Strong support for OOP, functional, and procedural styles
-- Used widely in AI/ML (PyTorch, TensorFlow, scikit-learn)
-- Great for beginners and experts alike
+> - Interpreted, runs line by line without a compile step
+> - Huge ecosystem (PyPI hosts 500k+ packages)
+> - Strong support for OOP, functional, and procedural styles
+> - Used widely in AI/ML (PyTorch, TensorFlow, scikit-learn)
+> - Great for beginners and experts alike
 
 ## History - Timeline
 
-- **1980s**: Conceptualized as a successor to the ABC language  
-- **1989**: Development started by Guido van Rossum at CWI in the Netherlands
-- **1991**: First released by Guido van Rossum  
-- **1994**: Python 1.0 released with new features like lambda, map, filter, and reduce
-- **2000**: Python 2  released with new features but also some backward-incompatible changes
-- **2008**: Python 3 released to address design flaws and modernize the language  
-- Today: Python is one of the **most popular programming languages** in the world, used by companies like Google, Instagram, and NASA.
+> - **1980s**: Conceptualized as a successor to the ABC language  
+> - **1989**: Development started by Guido van Rossum at CWI in the Netherlands
+> - **1991**: First released by Guido van Rossum  
+> - **1994**: Python 1.0 released with new features like lambda, map, filter, and reduce
+> - **2000**: Python 2  released with new features but also some backward-incompatible changes
+> - **2008**: Python 3 released to address design flaws and modernize the language  
+> - Today: Python is one of the **most popular programming languages** in the world, used by companies like Google, Instagram, and NASA.
 
 ## History
 
@@ -37,6 +37,8 @@ Python implementation began in December of 1989.
 Van Rossum first released it in 1991. He assumed sole responsibility for the project,
 as the lead developer, until July 12 2018.
 In January 2019, active Python core developers elected a five-member Steering Council to lead the project.
+
+### Fun Fact:
 
 The name Python comes from the British comedy series Monty Python's Flying Circus
 
