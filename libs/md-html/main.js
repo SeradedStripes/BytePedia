@@ -2,12 +2,30 @@
  * BytePedia, custom Markdown parser
  */
 (function () {
+    function escAttr(s) {
+        return String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
     function parseInline(text) {
         // Links  [text](url)
-        text = text.replace(
-            /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
-            '<a href="$2" target="_blank" rel="noopener">$1</a>'
-        );
+        text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, label, href) => {
+            const url = String(href).trim();
+            const safeLabel = escAttr(label);
+            const safeUrl = escAttr(url);
+
+            if (/\.(svg|png|jpe?g|gif|webp|avif)(\?[^\s]*)?(#[^\s]*)?$/i.test(url)) {
+                return `<img src="${safeUrl}" alt="${safeLabel}">`;
+            }
+
+            if (/^https?:\/\//i.test(url)) {
+                return `<a href="${safeUrl}" target="_blank" rel="noopener">${safeLabel}</a>`;
+            }
+            return `<a href="${safeUrl}">${safeLabel}</a>`;
+        });
         // Bare URLs
         text = text.replace(
             /(?<!href=")(https?:\/\/[^\s<>"]+)/g,
