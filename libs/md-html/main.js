@@ -73,9 +73,13 @@
                 continue;
             }
 
-            const hm = line.match(/^(#{1,6})\s+(.+)/);
+            const hm = line.match(/^(#{1,})\s+(.+)/);
             if (hm) {
-                tokens.push({ type: 'heading', level: hm[1].length, text: hm[2].trim() });
+                tokens.push({
+                    type: 'heading',
+                    level: Math.min(hm[1].length, 6),
+                    text: hm[2].trim()
+                });
                 i++;
                 continue;
             }
@@ -126,7 +130,7 @@
             while (
                 i < lines.length &&
                 lines[i].trim() !== '' &&
-                !/^#{1,6}\s/.test(lines[i]) &&
+                !/^#{1,}\s/.test(lines[i]) &&
                 !/^```/.test(lines[i]) &&
                 !/^-\s/.test(lines[i]) &&
                 !lines[i].startsWith('>')
