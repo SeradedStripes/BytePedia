@@ -24,6 +24,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Run build script
+        run: bash ./build-langs-index.sh
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
