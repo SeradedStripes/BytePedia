@@ -26,7 +26,7 @@ It is used for system-level programming, web assembly, game development, and mor
 ## History - Timeline
 
 > - **2006**: Graydon Hoare begins working on Rust as a personal project
-> - **2009**: Hoare begain speaking about the language at conferences and Mozilla begins sponsoring the project
+> - **2009**: Hoare began speaking about the language at conferences and Mozilla begins sponsoring the project
 > - **2010**: Ownership system is introduced to ensure memory safety
 > - **2011**: Rust Logo designed
 > - **2012**: Rust 0.1 released to the public for Windows, Linux, and MacOS
@@ -52,7 +52,48 @@ The name Rust was inspired by rust fungi
 Rust's syntax is similar to C and C++ but with some unique features.
 It uses curly braces for code blocks and semicolons to end statements.
 Rust has a strong type system and supports pattern matching, which allows for more expressive code.
-Therefore the languages visual structure is very easy and clear to understand, while also being powerful and flexible.
+Rust's syntax is similar to C and C++, but it includes additional safety and modern language features.
+
+## Ownership System
+
+Rust's ownership system is the core feature that allows it to provide memory safety without garbage collection.
+It is based on the concept of ownership, where each value in Rust has a single owner that is responsible for cleaning up the value when it goes out of scope.
+This allows Rust to ensure that memory is safely managed without the overhead of garbage collectors, while still preventing common bugs like null pointers.
+
+It follows three main rules:
+1. Each value has a single owner
+2. When the owner goes out of scope, the value is dropped
+3. Values can be borrowed, but not mutated while borrowed
+
+#### Example:
+
+```rust
+fn main() {
+  let s = String::from("hello");
+}
+```
+
+When `s` goes out of scope at the end of `main`, Rust frees the memory used by the string.
+
+### Borrowing
+
+Rust also allows borrowing which allows functions to use a value without taking its ownership.
+```rust
+fn main() {
+  let s = String::from("hello");
+  print_string(&s);
+}
+
+fn print_string(s: &String) {
+  println!("{}", s);
+}
+```
+
+Here `&s` creates a reference, meaning the function can read the value without having ownership of it.
+This prevents common bugs such as:
+- null pointer dereferencing
+- use after free errors
+- data races
 
 ## Statements
 
