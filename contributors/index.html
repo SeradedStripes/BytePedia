@@ -1,1 +1,50 @@
-Soon...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contributors | BytePedia</title>
+  <meta name="description" content="All contributors in BytePedia">
+  <meta property="og:title" content="BytePedia">
+  <meta property="og:description" content="All contributors in BytePedia">
+  <meta property="og:image" content="/assets/logo-v1.svg">
+  <meta property="og:url" content="${window.langUrl || window.location.href}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BytePedia">
+  <meta name="twitter:description" content="All contributors in BytePedia">
+  <meta name="twitter:image" content="/assets/logo-v1.svg">
+  <meta name="twitter:site" content="@BytePedia">
+  <meta name="twitter:creator" content="@SeradedStripes">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <img rel="preload" src="/assets/logo-v1.svg" alt="BytePedia Logo" width="72" height="72" style="vertical-align: middle; margin-right: 10px;">
+      <nav class="header-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/langs/">Languages</a></li>
+          <li><a href="/contributing/">Contributing</a></li>
+          <li><a href="/contributors/">Contributors</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <a class="back-link" href="../">&larr; Back</a>
+    <div class="lang-content" id="contributors"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 BytePedia</p>
+  </footer>
+
+  <script src="/libs/md-html/main.js"></script>
+  <script>
+    BytePedia.loadMarkdown('/contributors.md', 'contributors');
+  </script>
+</body>
+</html>
