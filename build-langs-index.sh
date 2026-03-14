@@ -1,10 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LANGS_DIR="$ROOT_DIR/langs"
 OUT_FILE="$LANGS_DIR/index.json"
 TMP_FILE="$OUT_FILE.tmp"
+
+touch "$TMP_FILE"
 
 escape_json() {
     printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'
@@ -35,7 +37,6 @@ escape_json() {
     done
 
     printf '\n]\n'
-    touch "$TMP_FILE"
 } > "$TMP_FILE"
 
 mv "$TMP_FILE" "$OUT_FILE"
