@@ -12,8 +12,9 @@
 4. Open http://localhost:8000 in your browser.
 
 >`dev.sh` also regenerates `/langs/index.json` (the list of available languages), so make sure to run it before testing.
-5. Once your changes are good, commit and push them to your fork.
-6. Open a pull request to the main repo with a clear description of your changes.
+5. Once your changes are good, add your name to the contributors list in `contributors.md` under the appropriate language section. This ensures you get proper credit for your work.
+6. Push all your commits to your forked repository.
+7. Open a pull request to the main repo with a clear description of your changes.
 
 ---
 
@@ -44,6 +45,10 @@
 - Place SVG logos at `/langs/<your-lang>/logo-<n>.svg`.
 - Recommended size: **512×512**. (As long as it renders well on the site, it can be any size, but 512×512 is ideal for quality and performance.)
 
+## 4. Add your name to the contributors list
+
+- Edit `contributors.md` and add your name under the appropriate language section.
+
 ---
 
 ## Pull Request Checklist
@@ -55,6 +60,7 @@
 - [ ] All Research and Content are properly cited with sources
 - [ ] All content is accurate and correct
 - [ ] All content is properly formatted and easy to read
+- [ ] Add your name to to the list of contributors for that language in contributors.md
 
 ---
 
