@@ -49,7 +49,7 @@ The name Python comes from the British comedy series Monty Python's Flying Circu
 
 Python uses whitespaces for its indentation instead of curly brackets or keywords.
 Increase in indentation comes after certain statements like `if`, `for`, `while`, `def`, and `class`.
-Therefore the languages visual strucutre is very easy and clear to understand.
+Therefore the languages visual structure is very easy and clear to understand.
 
 ## Statements
 
