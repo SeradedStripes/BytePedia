@@ -20,7 +20,7 @@ escape_json() {
         [ -d "$dir" ] || continue
 
         slug="$(basename "$dir")"
-        index_file="$dir/index.html"
+        index_file="$dir/main.md"
 
         if [ ! -f "$index_file" ]; then
             continue
