@@ -1,7 +1,7 @@
 (function() {
     if (!window.langName) window.langName = "BytePedia";
     if (!window.langDescription) window.langDescription = "BytePedia - Programming languages encyclopedia";
-    if (!window.langImage) window.langImage = "logo.png";
+    if (!window.langImage) window.langImage = "./logo.svg";
     if (!window.langUrl) window.langUrl = window.location.href;
 
     const title = document.createElement("title");
