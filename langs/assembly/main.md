@@ -1,7 +1,5 @@
 # Assembly
 
-[logo](logo.svg)
-
 Type: Low level programming language
 First appeared: 1947
 Creator: Early computer scientists (notably Kathleen Booth)
