@@ -11,3 +11,7 @@
 ## Random Reddit Post
 > - Url: https://www.reddit.com/r/rust/comments/27jvdt/internet_archaeology_the_definitive_endall_source/
 > - Date Accessed: 14 March 2026
+
+## Rust Book
+> - Url: https://doc.rust-lang.org/book/
+> - Date Accessed: 14 March 2026
