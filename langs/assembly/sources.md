@@ -6,3 +6,7 @@
 
 > - Url: https://en.wikipedia.org/wiki/Kathleen_Booth
 > - Date Accessed: 15 March 2026
+
+## ASM Community Forums
+> - Url: https://www.asmcommunity.net/forums/
+> - Date Accessed: 15 March 2026
