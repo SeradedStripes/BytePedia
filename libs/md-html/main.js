@@ -10,18 +10,29 @@
             .replace(/>/g, '&gt;');
     }
 
-    function parseInline(text) {
+    function resolveUrl(url, base) {
+        if (!url) return url;
+        if (/^https?:\/\//i.test(url) || url.startsWith('/')) {
+            return url;
+        }
+        if (!base) return url;
+        if (base.endsWith('/')) return base + url;
+        return base + '/' + url;
+    }
+
+    function parseInline(text, base) {
         // Links  [text](url)
         text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, label, href) => {
             const url = String(href).trim();
+            const resolved = resolveUrl(url, base);
             const safeLabel = escAttr(label);
-            const safeUrl = escAttr(url);
+            const safeUrl = escAttr(resolved);
 
-            if (/\.(svg|png|jpe?g|gif|webp|avif)(\?[^\s]*)?(#[^\s]*)?$/i.test(url)) {
+            if (/\.(svg|png|jpe?g|gif|webp|avif)(\?[^\s]*)?(#[^\s]*)?$/i.test(resolved)) {
                 return `<img src="${safeUrl}" alt="${safeLabel}">`;
             }
 
-            if (/^https?:\/\//i.test(url)) {
+            if (/^https?:\/\//i.test(resolved)) {
                 return `<a href="${safeUrl}" target="_blank" rel="noopener">${safeLabel}</a>`;
             }
             return `<a href="${safeUrl}">${safeLabel}</a>`;
@@ -146,7 +157,7 @@
         return tokens;
     }
 
-    function renderTokens(tokens) {
+    function renderTokens(tokens, base) {
         let html = '';
         for (const tok of tokens) {
             switch (tok.type) {
@@ -154,26 +165,26 @@
                     html += '<hr>\n';
                     break;
                 case 'heading':
-                    html += `<h${tok.level}>${parseInline(tok.text)}</h${tok.level}>\n`;
+                    html += `<h${tok.level}>${parseInline(tok.text, base)}</h${tok.level}>\n`;
                     break;
                 case 'code':
                     html += `<pre><code class="lang-${tok.lang}">${escHtml(tok.text)}</code></pre>\n`;
                     break;
                 case 'ul':
                     html += '<ul>\n'
-                        + tok.items.map(it => `  <li>${parseInline(it)}</li>`).join('\n')
+                        + tok.items.map(it => `  <li>${parseInline(it, base)}</li>`).join('\n')
                         + '\n</ul>\n';
                     break;
                 case 'blockquote':
-                    html += `<blockquote><p>${parseInline(tok.text)}</p></blockquote>\n`;
+                    html += `<blockquote><p>${parseInline(tok.text, base)}</p></blockquote>\n`;
                     break;
                 case 'bqlist':
                     html += '<blockquote><ul>\n'
-                        + tok.items.map(it => `  <li>${parseInline(it)}</li>`).join('\n')
+                        + tok.items.map(it => `  <li>${parseInline(it, base)}</li>`).join('\n')
                         + '\n</ul></blockquote>\n';
                     break;
                 case 'para':
-                    html += `<p>${parseInline(tok.text)}</p>\n`;
+                    html += `<p>${parseInline(tok.text, base)}</p>\n`;
                     break;
                 case 'blank':
                     break;
@@ -197,14 +208,34 @@
     }
 
     function loadMarkdown(mdPath, contentId, sourcesWrapperId, sourcesListId) {
+        const basePath = mdPath.includes('/') ? mdPath.slice(0, mdPath.lastIndexOf('/') + 1) : '';
         fetch(mdPath)
             .then(r => {
                 if (!r.ok) throw new Error(r.status);
                 return r.text();
             })
             .then(md => {
-                const html = renderTokens(tokenise(md));
-                document.getElementById(contentId).innerHTML = html;
+                const html = renderTokens(tokenise(md), basePath);
+                const container = document.getElementById(contentId);
+                if (!container) return;
+                container.innerHTML = html;
+
+                const fixUrl = (url) => {
+                    if (!url || /^\w+:\/\//.test(url) || url.startsWith('/')) return url;
+                    return basePath + url;
+                };
+
+                container.querySelectorAll('img').forEach(img => {
+                    const src = img.getAttribute('src');
+                    if (src) img.src = fixUrl(src);
+                });
+
+                container.querySelectorAll('a').forEach(a => {
+                    const href = a.getAttribute('href');
+                    if (href && !/^https?:\/\//.test(href) && !href.startsWith('#')) {
+                        a.href = fixUrl(href);
+                    }
+                });
 
                 if (sourcesWrapperId && sourcesListId) {
                     const wrapper = document.getElementById(sourcesWrapperId);

@@ -7,6 +7,21 @@
             .join(' ');
     }
 
+    function openPreview(lang) {
+        const panel = document.getElementById('lang-preview-panel');
+        const title = document.getElementById('lang-preview-title');
+        const content = document.getElementById('lang-preview-content');
+        const sources = document.getElementById('lang-preview-sources');
+        if (!panel || !content || !sources) return;
+
+        if (title) title.textContent = lang.name;
+        panel.hidden = false;
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        BytePedia.loadMarkdown(`/langs/${lang.slug}/main.md`, 'lang-preview-content');
+        BytePedia.loadMarkdown(`/langs/${lang.slug}/sources.md`, 'lang-preview-sources');
+    }
+
     function renderResults(resultsEl, languages) {
         if (!languages.length) {
             resultsEl.innerHTML = '<tr><td colspan="2">No languages found.</td></tr>';
@@ -15,9 +30,29 @@
 
         resultsEl.innerHTML = languages
             .map(lang => {
-                return `<tr><td><a href="/langs/${lang.slug}/">${lang.name}</a></td><td><a href="/langs/${lang.slug}/">/langs/${lang.slug}/</a></td></tr>`;
+                const esc = s => s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+                return `<tr class="lang-row" data-slug="${esc(lang.slug)}" data-name="${esc(lang.name)}" tabindex="0" role="button" aria-label="Open ${esc(lang.name)}"><td>${lang.name}</td><td>/langs/${esc(lang.slug)}/</td></tr>`;
             })
             .join('');
+
+        resultsEl.addEventListener('click', handleRowClick);
+        resultsEl.addEventListener('keydown', handleRowKeydown);
+    }
+
+    function getRowLang(row) {
+        return { slug: row.dataset.slug, name: row.dataset.name };
+    }
+
+    function handleRowClick(e) {
+        const row = e.target.closest('tr.lang-row');
+        if (row) openPreview(getRowLang(row));
+    }
+
+    function handleRowKeydown(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            const row = e.target.closest('tr.lang-row');
+            if (row) { e.preventDefault(); openPreview(getRowLang(row)); }
+        }
     }
 
     function normaliseLanguage(entry) {
@@ -68,6 +103,14 @@
         }
 
         renderResults(resultsEl, languages);
+
+        const closeBtn = document.getElementById('lang-preview-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                const panel = document.getElementById('lang-preview-panel');
+                if (panel) panel.hidden = true;
+            });
+        }
 
         inputEl.addEventListener('input', () => {
             const needle = inputEl.value.trim().toLowerCase();

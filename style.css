@@ -222,18 +222,66 @@ footer {
 	border-bottom: none;
 }
 
-.language-table tbody tr:hover td {
+.language-table tbody tr.lang-row {
+	cursor: pointer;
+}
+
+.language-table tbody tr.lang-row:hover td {
 	background: #16233e;
 }
 
-.language-table a {
-	color: #c7ddff;
-	text-decoration: none;
+.language-table tbody tr.lang-row:focus {
+	outline: 2px solid #93c5fd;
+	outline-offset: -2px;
 }
 
-.language-table a:hover {
+.lang-preview-panel {
+	margin: 1.25rem 0 1.5rem;
+	border: 1px solid #253046;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.lang-preview-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0.9rem;
+	background: #0d1224;
+	border-bottom: 1px solid #253046;
+}
+
+.lang-preview-title {
+	font-weight: 600;
+	color: #c9d8f0;
+	font-size: 0.95rem;
+}
+
+.lang-preview-close {
+	background: none;
+	border: none;
+	color: #94a3b8;
+	font-size: 1.3rem;
+	line-height: 1;
+	cursor: pointer;
+	padding: 0 0.2rem;
+}
+
+.lang-preview-close:hover {
 	color: #ffffff;
-	text-decoration: underline;
+}
+
+.lang-preview-body {
+	display: grid;
+	gap: 1rem;
+}
+
+.lang-preview-body .lang-content {
+	margin: 0;
+}
+
+.lang-preview-body .lang-content + .lang-content {
+	margin-top: 0.8rem;
 }
 
 @media (max-width: 560px) {

@@ -13,7 +13,6 @@
   <link rel="icon" href="/favicon.ico">
 </head>
 <body>
-
   <main class="container">
     <a class="back-link" href="../">&larr; Back</a>
 
@@ -27,6 +26,8 @@
         autocomplete="on"
         aria-controls="language-results"
       >
+    </section>
+    <section>
       <div class="language-table-wrap" aria-live="polite">
         <table class="language-table">
           <thead>
@@ -39,6 +40,17 @@
         </table>
       </div>
     </section>
+
+    <div id="lang-preview-panel" class="lang-preview-panel" hidden>
+      <div class="lang-preview-bar">
+        <span id="lang-preview-title" class="lang-preview-title"></span>
+        <button id="lang-preview-close" class="lang-preview-close" aria-label="Close preview">&times;</button>
+      </div>
+      <div class="lang-preview-body">
+        <div id="lang-preview-content" class="lang-content">Select a language from the list to view its information.</div>
+        <div id="lang-preview-sources" class="lang-content"></div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -48,7 +60,6 @@
   <script src="/libs/md-html/main.js"></script>
   <script src="/libs/lang-search/main.js"></script>
   <script>
-    BytePedia.loadMarkdown('/langs/main.md', 'content');
     BytePediaLangSearch.init({
       inputId: 'language-search',
       resultsId: 'language-results',
