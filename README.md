@@ -13,16 +13,11 @@ BytePedia is a web-based encyclopedia of programming languages, from classic one
 > - User-friendly interface for easy navigation
 > - Regular updates to keep the information current
 > - Documentation and resources for learning each language
-> - A cool API for developers to access the data
+> - A cool API for developers to access the data 
 
 ## Contributing
 
-> Want to add a language, fix info, or submit a logo?  
-> Add a new JSON entry in /langs/xyz/main.md (use existing files as templates)  
-> Add a new html page in /langs/xyz/index.html (use existing files as templates)
-> Add your logo in /langs/xyz/logo-n.svg (where n = logo number) (512×512 recommended)  
-> Submit a pull request  
-> Thats it!
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to BytePedia.
 
 ## License
 

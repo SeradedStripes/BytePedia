@@ -33,41 +33,7 @@
   </header>
   <main class="container">
     <a class="back-link" href="../">&larr; Back</a>
-
-    <section class="lang-search" aria-labelledby="lang-search-title">
-      <h2 id="lang-search-title">Find a language</h2>
-      <h5 id="contribute">If you want to contribute go <a href="/contributing/">here</a></h5>
-      <label for="language-search" class="sr-only">Search languages</label>
-      <input
-        id="language-search"
-        type="search"
-        placeholder="Search languages..."
-        autocomplete="on"
-        aria-controls="language-results"
-      >
-      <div class="language-table-wrap" aria-live="polite">
-        <table class="language-table">
-          <thead>
-            <tr>
-              <th scope="col">Language</th>
-              <th scope="col">Path</th>
-            </tr>
-          </thead>
-          <tbody id="language-results"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <div id="lang-preview-panel" class="lang-preview-panel" hidden>
-      <div class="lang-preview-bar">
-        <span id="lang-preview-title" class="lang-preview-title"></span>
-        <button id="lang-preview-close" class="lang-preview-close" aria-label="Close preview">&times;</button>
-      </div>
-      <div class="lang-preview-body">
-        <div id="lang-preview-content" class="lang-content">Select a language from the list to view its information.</div>
-        <div id="lang-preview-sources" class="lang-content"></div>
-      </div>
-    </div>
+    <div class="lang-content" id="contributing-guidelines"></div>
   </main>
 
   <footer>
@@ -75,13 +41,8 @@
   </footer>
 
   <script src="/libs/md-html/main.js"></script>
-  <script src="/libs/lang-search/main.js"></script>
   <script>
-    BytePediaLangSearch.init({
-      inputId: 'language-search',
-      resultsId: 'language-results',
-      indexPath: '/langs/index.json'
-    });
+    BytePedia.loadMarkdown('CONTRIBUTING.md', 'contributing-guidelines');
   </script>
 </body>
 </html>
