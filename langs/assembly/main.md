@@ -9,8 +9,8 @@ Creator: Early computer scientists (notably Kathleen Booth)
 ## About
 
 Assembly is a low level programming language that is very close to machine code.
-It is for high performant applications and it normally used for operating systems and embedded systems.
-Its a very difficult language to learn and use, but it can be very powerful to use.
+It is used for high-performance applications and is commonly used in operating systems and embedded systems.
+It is a very difficult language to learn and use, but it can be very powerful to use.
 Each CPU architecture has its own assembly language, such as x86, ARM, or RISC-V.
 
 ## Key Features
@@ -50,7 +50,7 @@ For example, in x86 assembly, you might see instructions like `mov` and `add` th
 Assembly also uses labels for jumps and loops, and it allows direct manipulation of memory and registers.
 The syntax is very low-level and can be difficult to read and write, but it gives programmers direct control over the hardware that they have which no other language can provide.
 
-### Registers
+### Registers (x86-64)
 
 > - `rax`: Accumulator: math, return values from functions and syscalls
 > - `rbx`: Base: often preserved across calls, general use
@@ -61,7 +61,7 @@ The syntax is very low-level and can be difficult to read and write, but it give
 > - `rsp`: Stack Pointer: points to the top of the stack (LIFO)
 > - `rbp`: Base Pointer: points to start of current stack frame
 > - `rip`: instruction pointer (instruction CPU executes)
-> - `rflags`: CPU status flags (zeroflay, carry, sign, etc.)
+> - `rflags`: CPU status flags (zero flag, carry, sign, etc.)
 
 ## Hello World
 
