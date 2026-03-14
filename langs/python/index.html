@@ -2,28 +2,17 @@
 <html lang="en">
 <head>
   <script>
-    let langName = "Python";
-    let langDescription = "Comprehensive information about the Python programming language, including history, features, and resources for learning.";
-    let langImage = "/lang/python/logo.svg";
+    window.langName = "Python";
+    window.langDescription = "Python programming language reference";
+    window.langImage = "logo.svg";
+    window.langUrl = "https://bytepedia.kirze.de/langs/python";
   </script>
-  <script src="/libs/head/main.js"></script>
+
+  <script src="/libs/components/main.js" defer></script>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1><a href="/" style="color:inherit;text-decoration:none;">BytePedia</a></h1>
-      <nav class="header-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/langs/">Languages</a></li>
-          <li><a href="/langs/python/">Python</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <main class="container">
-    <a class="back-link" href="/">&larr; Back</a>
+    <a class="back-link" href="../">&larr; Back</a>
     <div class="lang-content" id="content">Loading...</div>
     <div class="lang-content" id="sources-list">Loading...</div>
   </main>

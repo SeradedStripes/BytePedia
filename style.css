@@ -162,3 +162,99 @@ footer {
 }
 
 .back-link:hover { text-decoration: underline; }
+
+.lang-search {
+	background: #111827;
+	border: 1px solid #253046;
+	border-radius: 10px;
+	padding: 1.2rem;
+	margin: 1rem 0 1.5rem;
+}
+
+.lang-search h2 {
+	margin: 0 0 0.75rem;
+}
+
+.lang-search input {
+	width: 100%;
+	padding: 0.78rem 0.85rem;
+	border-radius: 8px;
+	border: 1px solid #3b5080;
+	background: #0a1328;
+	color: #e5e7eb;
+	font: inherit;
+	margin-bottom: 0.85rem;
+}
+
+.lang-search input:focus {
+	outline: 2px solid #93c5fd;
+	outline-offset: 1px;
+}
+
+.language-table-wrap {
+	overflow-x: auto;
+	border: 1px solid #253046;
+	border-radius: 8px;
+}
+
+.language-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 420px;
+}
+
+.language-table thead th {
+	text-align: left;
+	padding: 0.62rem 0.72rem;
+	background: #0d1224;
+	border-bottom: 1px solid #253046;
+	font-weight: 600;
+	color: #c9d8f0;
+}
+
+.language-table td {
+	padding: 0.58rem 0.72rem;
+	border-bottom: 1px solid #1f2a42;
+	background: #0f192e;
+}
+
+.language-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.language-table tbody tr:hover td {
+	background: #16233e;
+}
+
+.language-table a {
+	color: #c7ddff;
+	text-decoration: none;
+}
+
+.language-table a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+	.language-table {
+		min-width: 100%;
+	}
+
+	.language-table thead th,
+	.language-table td {
+		padding: 0.55rem 0.6rem;
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
