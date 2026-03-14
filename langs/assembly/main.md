@@ -4,7 +4,7 @@
 
 Type: Low level programming language
 First appeared: 1947
-Creator: Kathleen Booth
+Creator: Early computer scientists (notably Kathleen Booth)
 
 ## About
 
