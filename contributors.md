@@ -10,19 +10,23 @@ Example:
 ## Links
 - Name/Username - [Github](https://github.com/username)
 ```
-## Main Website
+## Main Site
+
+### Libraries
 
 - SeradedStripes (March 2026)
 
-## Libraries
+## Languages
+
+### Assembly
 
 - SeradedStripes (March 2026)
 
-## Rust
+### Rust
 
 - SeradedStripes (March 2026)
 
-## Python
+### Python
 
 - SeradedStripes (March 2026)
 
