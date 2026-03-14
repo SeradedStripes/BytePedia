@@ -46,3 +46,39 @@ Even the White House urges developers to use Rust for secure software developmen
 ## Fun Fact:
 
 The name Rust was inspired by rust fungi
+
+## Syntax
+
+Rust's syntax is similar to C and C++ but with some unique features.
+It uses curly braces for code blocks and semicolons to end statements.
+Rust has a strong type system and supports pattern matching, which allows for more expressive code.
+Therefore the languages visual structure is very easy and clear to understand, while also being powerful and flexible.
+
+## Statements
+
+Statements in Rust include:
+
+> - `fn` is used to define functions
+> - `let` is used for variable binding
+> - `mut` is used to make variables mutable
+> - `match` is used for pattern matching
+> - `impl` is used to define methods for structs and enums
+> - `use` is used to bring modules into scope
+> - `println!` is a macro used for printing to the console
+> - `if`, `else`, `for`, and `while` are used for control flow
+> - `struct` and `enum` are used for defining custom data types
+> - `trait` is used for defining shared behavior across types
+> - `async` and `await` are used for asynchronous programming
+> - `unsafe` is used to denote code that may violate Rust's safety guarantees
+> - `extern` is used for interfacing with external code and libraries
+> - `mod` is used to define modules and organize code
+> - `pub` is used to make items public and accessible from other modules
+> - `const` and `static` are used for defining constants and static variables
+
+## Hello World Example
+
+```rust
+fn main() {
+  println!("Hello, World!");
+};
+```
