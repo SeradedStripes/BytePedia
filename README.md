@@ -12,7 +12,6 @@ BytePedia is a web-based encyclopedia of programming languages, from classic one
 > - Logos and icons for each language
 > - User-friendly interface for easy navigation
 > - Regular updates to keep the information current
-> - Documentation and resources for learning each language
 
 ## Contributing
 
